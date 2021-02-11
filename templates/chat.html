@@ -38,6 +38,13 @@
 						</div>
 					</div>
 				</div>
+				<div class="row chat-typers">
+					<div class="col-md-12" id="typers">
+						<p id="is_typing">
+							<span class="typing-block">block</span>
+						</p>
+					</div>
+				</div>
 				<div class="row chat-footer">
 					<div class="col-md-10 cf-element cf-field">
 						<input type="text" id="message" placeholder="Message" class="chat-input chat-input-field">
@@ -85,10 +92,7 @@
 			var sender = "{{ session.name }}"
 
 			// Send message to server
-			socket.emit('message', {
-								    name: sender,
-								    message: message
-								});
+			socket.emit('message', {name: sender, message: message});
 			// Reset form to empty
 			$("#message").val("");
 
@@ -98,7 +102,53 @@
 		socket.on('message-response', function(response) {
 
 			// Append message to chat
-			$("#chat-messages").append("<p id='chat-message'><span class='chat-name'>"+ response.name +": </span><span class='chat-message'>"+ response.message +"</span></p>")
+			$("#chat-messages").append("<p id='chat-message'><span class='chat-name'>"+ response.name +": </span><span class='chat-message'>"+ response.message +"</span></p>");
+
+		});
+
+		// Identify if user is changing input field
+		$("#message").on("input", function()  {
+
+			var typer = "{{ session.name }}";
+			var message_length = $(this).val().length;
+			var typing;
+
+			// Check if the user is typing
+			if (message_length > 0) {
+
+				typing = true;
+
+			} else {
+
+				typing = false;
+
+			}
+
+			// Send typing information to server
+			socket.emit('typing', {name: typer, is_typing: typing});
+
+		});
+
+		// Retrieve typing information from server
+		socket.on('typing-response', function(response) {
+
+			// Make sure the user typing isn't you.
+			if (response.name != "{{ session.name }}") {
+
+				// Check if the user is typing or has stopped typing
+				if (response.is_typing) {
+
+					// Display who is typing
+					$("#is_typing").html(response.name + ' is typing...');
+
+				} else {
+
+					// Remove who is typing if they have stopped
+					$("#is_typing").html('<span class="typing-block">block</span>')
+
+				}
+
+			}
 
 		});
 

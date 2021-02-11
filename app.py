@@ -55,6 +55,12 @@ def handleMessage(data):
 		# Send message data to clients
 		socketio.emit('message-response', data)
 
+# Handle typing
+@socketio.on('typing')
+def handleTyping(data):
+	# Send if the person is typing and who it is
+	socketio.emit('typing-response', data)
+
 # Run application
 if __name__ == '__main__':
 	app.run(debug=True)
