@@ -1,0 +1,122 @@
+@import url('https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css');
+
+/*
+
+COLORS:
+	-background: #121212;
+	-colorOnBackground: #fff;
+	-colorOnScheme: #fff;
+	-primary: #BB86FC;
+	-secondary: #03DAC6;
+	-error: #CF6679;
+
+*/
+
+body {
+	background-color: #121212;
+	color: #fff;
+}
+
+.input {
+
+	border: none;
+	width: 100%;
+	outline: none;
+	padding: 15px;
+	font-size: 17px;
+
+}
+
+	.input-field {
+
+		 margin-top: 10px;
+
+	}
+
+	.input-button {
+
+		background: #BB86FC;
+		color: #fff;
+
+	}
+
+
+.chat {
+
+	margin-top: 30px;
+
+}
+
+.chat-header {
+
+	background: #BB86FC;
+	color: #fff;
+
+}
+	.ch-element {
+
+		padding: 10px;
+
+	}
+
+	.ch-text {
+
+		padding-left: 15px;
+		font-weight: bold;
+
+	}
+
+	.ch-button {
+
+		border-right: 2px #111 solid;
+
+	}
+
+		.ch-button a {
+
+			color: #fff;
+
+		}
+
+.cb-chat {
+	height: 60vh;
+	max-height: 60vh;
+	overflow-y: scroll;
+	overflow-x: hidden;
+	width: 100%;
+	font-size: 25px;
+}
+
+
+	.chat-name {
+		color: #03DAC6;
+	}
+
+.chat-footer {
+	width: 100%;
+	background: #BB86FC;
+	padding: 0;
+	margin: 0;
+}
+
+.chat-input {
+
+	border: none;
+	width: 100%;
+	outline: none;
+	padding: 15px;
+	font-size: 17px;
+
+}
+
+	.chat-input-field {}
+
+	.chat-input-button {
+
+		background: #BB86FC;
+		color: #fff;
+		width: 100%;
+
+	}
+
+

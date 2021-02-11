@@ -1,0 +1,47 @@
+{% extends 'app.html' %}
+
+{% block title %}
+	Dispute - Start
+{% endblock %}
+
+{% block body %}
+<br>
+<div class="container mt-4">
+	<div class="row">
+		<div class="col-md-4"></div>
+		<div class="col-md-4 text-center">
+			
+			<img src="{{ url_for('static', filename='images/dispute.png') }}" width="250px">
+
+			<form action="./chat" method="post" class="mb-4">
+				<input type="text" name="name" placeholder="Name" class="input input-field">
+				<button type="submit" class="input input-button">
+					Enter Dispute
+				</button>
+			</form>
+
+			<p class="mt-4">
+				<small>
+					Made by Nils Garland. View project on <a href="https://github.com/nilsgarland/dispute" taget="_blank">GitHub</a>.
+				</small>
+			</p>
+
+		</div>
+		<div class="col-md-4"></div>
+	</div>
+</div>
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,2 +1,2 @@
 # dispute
-light-weight community messaging application
+Light-weight community messaging application
