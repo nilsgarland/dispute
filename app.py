@@ -9,7 +9,7 @@ from models import *
 app = Flask(__name__)
 
 # Application configurations
-app.config['SECRET_KEY'] = 'cxNtdRS8d2h:8P_M2,bTIOKgWm9AO3'
+app.config['SECRET_KEY'] = ''
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///dispute.db'
 
 # Register blueprint from views
