@@ -1,11 +1,9 @@
 from flask import Flask, Blueprint
 from flask_sqlalchemy import SQLAlchemy
 from flask_socketio import SocketIO, send
-from datetime import datetime
 from views import main
 from extensions import db
 from models import *
-import json
 
 # Initialize flask application
 app = Flask(__name__)
