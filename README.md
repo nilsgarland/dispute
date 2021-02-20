@@ -7,4 +7,4 @@ Try it out!
 https://dispute.nilsgarland.com
 
 
-Notable files for review: App.py, Views.py, Chat.html
+Notable files for review: app.py, ciews.py, templates/chat.html
