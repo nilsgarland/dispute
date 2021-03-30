@@ -3,8 +3,6 @@ Light-weight community messaging application.
 
 Try it out!
 
-https://dispute.nilsgarland.com
-
 Tech Stack:
  - Python3
  - Flask
